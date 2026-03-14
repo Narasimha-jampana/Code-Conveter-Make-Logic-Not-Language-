@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "narasimha-jampana"
+  },
+  "targets": {
+    "narasimha-jampana": {
+      "hosting": {
+        "code-converter-target": [
+          "code-converter-nj"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

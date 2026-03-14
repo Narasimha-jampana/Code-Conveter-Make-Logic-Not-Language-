@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Billion Dollar Palette: Deep Abyss */
+    --background: 240 10% 2%;
+    --foreground: 210 20% 98%;
+    
+    --card: 240 10% 4%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 240 10% 5%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 180 100% 50%; /* Electric Cyan */
+    --primary-foreground: 240 10% 2%;
+    
+    --secondary: 240 10% 6%;
+    --secondary-foreground: 210 10% 80%;
+    
+    --muted: 240 10% 8%;
+    --muted-foreground: 210 10% 50%;
+    
+    --accent: 260 100% 65%; /* Prism Violet */
+    --accent-foreground: 210 20% 98%;
+    
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 240 10% 12%;
+    --input: 240 10% 12%;
+    --ring: 180 100% 50%;
+    
+    --radius: 12px;
+
+    /* Advanced Lighting & Physics */
+    --glass-bg: rgba(2, 4, 8, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --light-leak: radial-gradient(circle at 50% -20%, rgba(0, 255, 255, 0.05), transparent 70%);
+    --surface-shine: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-primary/20 selection:text-primary;
+  }
+  body {
+    @apply bg-background text-foreground antialiased overflow-hidden;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* The "Abyss" Background */
+  .abyss-bg {
+    background-color: hsl(var(--background));
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 40%),
+      var(--light-leak);
+    position: relative;
+  }
+
+  /* Cinematic Noise Filter */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Ultra-Premium Glass */
+  .glass-premium {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 
+      0 4px 32px -8px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    @apply glass-premium;
+  }
+
+  /* Precision UI Elements */
+  .btn-magnetic {
+    @apply relative overflow-hidden transition-all duration-500 ease-out;
+    background: linear-gradient(135deg, hsl(var(--primary)), #00d4ff);
+    box-shadow: 0 0 20px -5px rgba(0, 255, 255, 0.4);
+  }
+
+  .btn-magnetic:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 0 30px -5px rgba(0, 255, 255, 0.6);
+  }
+
+  .btn-magnetic::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-20deg) translateX(-100%);
+  }
+
+  .btn-magnetic:hover::after {
+    @apply opacity-100;
+    animation: sweep 1.5s infinite;
+  }
+
+  @keyframes sweep {
+    100% { transform: skewX(-20deg) translateX(200%); }
+  }
+
+  /* The "Pulse" Scanning Effect */
+  .scan-bar {
+    @apply absolute left-0 right-0 h-[2px] z-20 pointer-events-none;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    box-shadow: 0 0 15px hsl(var(--primary));
+    opacity: 0;
+  }
+
+  .is-scanning .scan-bar {
+    opacity: 1;
+    animation: scan 2s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+  }
+
+  .code-font {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: 'liga', 'calt';
+    letter-spacing: -0.01em;
+  }
+
+  .dot-grid-premium {
+    background-image: 
+      radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Typography Refinements */
+  .heading-premium {
+    @apply font-bold tracking-tight;
+    background: linear-gradient(to bottom, #fff, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Custom Scrollbar for Abyss */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
