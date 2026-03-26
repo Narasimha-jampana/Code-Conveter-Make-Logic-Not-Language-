@@ -1,4 +1,4 @@
-Thanks for the live‑demo link! Here’s the updated, polished README for your **Code Converter** repository, including that link and matching your portfolio style:
+Here’s your **final polished README** with clean formatting and a small update for your email and supported‑languages section:
 
 ***
 
@@ -21,6 +21,18 @@ A fast, responsive web tool that converts code between multiple programming lang
 - 💾 **Copy & share** — One‑click copy to clipboard or export converted code  
 - 🛡️ **Input validation** — Basic error feedback for invalid or empty inputs  
 
+## 🔄 Supported Conversions
+
+*(Update this list to match exactly what your app supports)*  
+
+- Python ↔ JavaScript  
+- Python ↔ Java  
+- JavaScript ↔ Java  
+- C++ ↔ Python  
+- *(Add any other language pairs you implemented)*  
+
+If you tell me the **exact languages** your converter handles, I can make this list precise.
+
 ## 🛠️ Tech Stack
 
 | Technology | Usage |
@@ -32,7 +44,7 @@ A fast, responsive web tool that converts code between multiple programming lang
 
 ## 📁 Project Structure
 
-```
+```text
 code-converter/
 ├── index.html         # Main HTML file
 ├── style.css          # Global styles & responsive layout
@@ -62,7 +74,7 @@ No dependencies or build step required — it runs directly in the browser.
 
 ## 🌍 Deployment
 
-This project is deployed using **Firebase Hosting** for high performance and reliability: [ui2code](https://ui2code.ai)
+This project is deployed using **Firebase Hosting** for high performance and reliability:
 
 ```bash
 # Install Firebase CLI
@@ -77,8 +89,9 @@ firebase deploy
 
 **Subba Narasimha Reddy Jampana**  
 🌐 **Portfolio**: [https://narasimha-jampana.web.app/](https://narasimha-jampana.web.app/)  
+🌐 **Code Converter**: [https://code-converter-nj.web.app/](https://code-converter-nj.web.app/)  
 💻 **GitHub**: [@Narasimha-jampana](https://github.com/Narasimha-jampana)  
-✉️ **Email**: [your‑email@example.com](mailto:your‑email@example.com)
+✉️ **Email**: narasimhajampana12@gmail.com
 
 ## ⭐ Show Your Support
 
@@ -91,4 +104,4 @@ If you like this project, please consider giving it a **⭐ star** on GitHub —
 
 ***
 
-Would you like me to also add a short section listing **which exact languages your converter supports** (e.g., Python ↔ JavaScript, Java ↔ Python, etc.) so visitors know what it can do out of the box?
+If you paste here the **exact list of languages** your converter supports (e.g., only Python→JavaScript, or Python↔Java↔C++), I can rewrite the **“Supported Conversions”** section to match your current implementation perfectly.
